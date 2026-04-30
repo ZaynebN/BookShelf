@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Books — Bookshelf</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- ============== Navbar ============== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="accent">B</span>ook<span class="accent">s</span>helf
+      </a>
+      <button class="menu-btn" aria-label="open menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign up</a></li>
+        <li>
+          <a href="cart.html" class="cart-link" aria-label="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+
+      <div class="section-title">
+        <h2>Browse the catalog</h2>
+        <p>Find your next favourite — already loved by another reader.</p>
+      </div>
+
+      <div class="catalog-wrap">
+
+        <!-- ====== filters ====== -->
+        <aside class="filters">
+
+          <div class="filter-group">
+            <h4>Genre</h4>
+            <div class="filter-btns">
+              <button data-genre="All" class="active">All genres</button>
+              <button data-genre="Fiction">Fiction</button>
+              <button data-genre="Non-fiction">Non-fiction</button>
+              <button data-genre="Classics">Classics</button>
+              <button data-genre="Philosophy">Philosophy</button>
+              <button data-genre="Science">Science</button>
+              <button data-genre="History">History</button>
+              <button data-genre="Romance">Romance</button>
+              <button data-genre="Children">Children</button>
+              <button data-genre="Art">Art</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h4>Pages</h4>
+            <select id="pages-filter" class="form-control">
+              <option value="All">Any length</option>
+              <option value="0-100">0 – 100 pages</option>
+              <option value="100-200">100 – 200 pages</option>
+              <option value="200-300">200 – 300 pages</option>
+              <option value="300-400">300 – 400 pages</option>
+              <option value="400+">More than 400 pages</option>
+            </select>
+          </div>
+
+        </aside>
+
+        <!-- ====== catalog ====== -->
+        <div>
+          <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" id="search-input" placeholder="search by title…">
+          </div>
+
+          <div class="book-grid" id="book-grid">
+            <!-- books are injected by script.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>

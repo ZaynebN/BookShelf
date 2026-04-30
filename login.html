@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — Bookshelf</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- ============== Navbar ============== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="accent">B</span>ook<span class="accent">s</span>helf
+      </a>
+      <button class="menu-btn" aria-label="open menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign up</a></li>
+        <li>
+          <a href="cart.html" class="cart-link" aria-label="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="auth-wrap">
+      <!-- Login form -->
+      <div class="auth-card">
+        <h2>Welcome back</h2>
+        <p class="subtitle">Log in to continue your reading journey.</p>
+
+        <!-- TODO_BACKEND : action="/login.php" method="POST" -->
+        <form id="login-form" novalidate>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" class="form-control"
+                   placeholder="you@example.com" required>
+            <div class="form-error" data-error="email"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control"
+                   placeholder="••••••" required>
+            <div class="form-error" data-error="password"></div>
+          </div>
+
+          <button type="submit" class="btn btn-block">Log in</button>
+        </form>
+
+        <p class="auth-switch">
+          New here ? <a href="signup.html">Create an account</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell a Book — Bookshelf</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- ============== Navbar ============== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="accent">B</span>ook<span class="accent">s</span>helf
+      </a>
+      <button class="menu-btn" aria-label="open menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign up</a></li>
+        <li>
+          <a href="cart.html" class="cart-link" aria-label="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+
+      <div class="section-title">
+        <h2>Sell a book</h2>
+        <p>Fill in the form — your book will be added to the catalog right away.</p>
+      </div>
+
+      <div class="sell-wrap">
+
+        <!-- ====== left column : tips ====== -->
+        <aside class="sell-side">
+          <h3>A few tips</h3>
+          <p>To help your book find its next reader, take a moment to:</p>
+          <ul>
+            <li><i class="fa-solid fa-camera"></i> Use a clear cover photo</li>
+            <li><i class="fa-solid fa-feather"></i> Write the title and author exactly</li>
+            <li><i class="fa-solid fa-tags"></i> Pick all the genres that apply</li>
+            <li><i class="fa-solid fa-circle-check"></i> Be honest about the quality</li>
+            <li><i class="fa-solid fa-pen"></i> Add a small note about the book</li>
+          </ul>
+        </aside>
+
+        <!-- ====== right column : the form ====== -->
+        <div class="form-card">
+          <!-- TODO_BACKEND : action="/sell.php" method="POST" enctype="multipart/form-data" -->
+          <form id="sell-form" novalidate>
+
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" id="title" name="title" class="form-control"
+                     placeholder="ex. The Brothers Karamazov" required>
+              <div class="form-error" data-error="title"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input type="text" id="author" name="author" class="form-control"
+                     placeholder="ex. Fyodor Dostoyevsky" required>
+              <div class="form-error" data-error="author"></div>
+            </div>
+
+            <div class="form-group">
+              <label>Cover image</label>
+              <label class="file-upload" for="cover">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <strong>click to upload a cover</strong>
+                <div class="file-name">no file chosen</div>
+                <input type="file" id="cover" name="cover" accept="image/*">
+              </label>
+              <div class="form-error" data-error="cover"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="pages">Number of pages</label>
+              <select id="pages" name="pages" class="form-control" required>
+                <option value="">— choose a range —</option>
+                <option value="0-100">0 – 100 pages</option>
+                <option value="100-200">100 – 200 pages</option>
+                <option value="200-300">200 – 300 pages</option>
+                <option value="300-400">300 – 400 pages</option>
+                <option value="400+">More than 400 pages</option>
+              </select>
+              <div class="form-error" data-error="pages"></div>
+            </div>
+
+            <div class="form-group">
+              <label>Genre(s)  <span style="text-transform:none; font-weight:400; color:var(--brown); font-style:italic">(pick at least one)</span></label>
+              <div class="checkbox-grid">
+                <label><input type="checkbox" name="genre" value="Fiction"> Fiction</label>
+                <label><input type="checkbox" name="genre" value="Non-fiction"> Non-fiction</label>
+                <label><input type="checkbox" name="genre" value="Classics"> Classics</label>
+                <label><input type="checkbox" name="genre" value="Philosophy"> Philosophy</label>
+                <label><input type="checkbox" name="genre" value="Science"> Science</label>
+                <label><input type="checkbox" name="genre" value="History"> History</label>
+                <label><input type="checkbox" name="genre" value="Romance"> Romance</label>
+                <label><input type="checkbox" name="genre" value="Children"> Children</label>
+                <label><input type="checkbox" name="genre" value="Art"> Art</label>
+              </div>
+              <div class="form-error" data-error="genre"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="quality">Quality</label>
+              <select id="quality" name="quality" class="form-control" required>
+                <option value="">— choose the condition —</option>
+                <option value="New">New</option>
+                <option value="Very Good">Very Good</option>
+                <option value="Good">Good</option>
+                <option value="Acceptable">Acceptable</option>
+                <option value="Low Quality">Low Quality</option>
+              </select>
+              <div class="form-error" data-error="quality"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="price">Price (in $)</label>
+              <input type="number" id="price" name="price" class="form-control"
+                     min="0.5" step="0.5" placeholder="ex. 9.50" required>
+              <div class="form-error" data-error="price"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="info">Additional information</label>
+              <textarea id="info" name="info" class="form-control"
+                        placeholder="Anything the buyer should know — annotations, missing pages, signed copy, etc."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-block">Publish my book</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>

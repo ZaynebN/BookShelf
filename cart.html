@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart — Bookshelf</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- ============== Navbar ============== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="accent">B</span>ook<span class="accent">s</span>helf
+      </a>
+      <button class="menu-btn" aria-label="open menu"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Sign up</a></li>
+        <li>
+          <a href="cart.html" class="cart-link" aria-label="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-count">0</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+
+      <div class="section-title">
+        <h2>Your cart</h2>
+        <p>Review the books you have selected, then check out.</p>
+      </div>
+
+      <div class="cart-wrap">
+
+        <!-- ====== items list ====== -->
+        <div class="cart-list" id="cart-list">
+          <!-- items are injected by script.js -->
+        </div>
+
+        <!-- ====== summary + pay ====== -->
+        <aside class="cart-summary">
+          <h3>Order summary</h3>
+
+          <div class="summary-row">
+            <span>Items in your cart</span>
+            <span class="cart-count">0</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span>free</span>
+          </div>
+
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="cart-total">$0.00</span>
+          </div>
+
+          <!-- TODO_BACKEND : on click, POST cart to /pay.php  -->
+          <button id="cart-pay" class="btn-pay" disabled>
+            <i class="fa-solid fa-lock"></i> &nbsp; Pay now
+          </button>
+
+          <p style="margin-top:1rem; font-size:.8rem; color:var(--beige); font-style:italic; text-align:center;">
+            By paying, the books are removed from the catalog and an order
+            (commande) is created in the database.
+          </p>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="/script.js"></script>
+</body>
+</html>
